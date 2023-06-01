@@ -3,28 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <title>テーブル</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.7/tailwind.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+      background-color: #f9fafb;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+
+    th {
+      background-color: #edf2f7;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f7fafc;
+    }
+
+    a {
+      display: block;
+      margin: 20px auto;
+      width: 150px;
+      padding: 10px;
+      text-align: center;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <table border="1" style="margin: auto;">
-        <tr>
-          <th>名前</th>
-          <td>山田太郎</td>
-          <td>佐藤花子</td>
-          <td>田中次郎</td>
+  <div class="container mx-auto my-8">
+    <table class="table-auto border-collapse border border-gray-300 shadow-md">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="px-4 py-2 text-gray-600 uppercase">名前</th>
+          <th class="px-4 py-2 text-gray-600 uppercase">年齢</th>
+          <th class="px-4 py-2 text-gray-600 uppercase">性別</th>
         </tr>
-        <tr>
-          <th>年齢</th>
-          <td>25歳</td>
-          <td>30歳</td>
-          <td>35歳</td>
+      </thead>
+      <tbody>
+        <tr class="bg-white">
+          <td class="px-4 py-2">山田太郎</td>
+          <td class="px-4 py-2">25歳</td>
+          <td class="px-4 py-2">男性</td>
         </tr>
-        <tr>
-          <th>性別</th>
-          <td>男性</td>
-          <td>女性</td>
-          <td>男性</td>
+        <tr class="bg-gray-100">
+          <td class="px-4 py-2">佐藤花子</td>
+          <td class="px-4 py-2">30歳</td>
+          <td class="px-4 py-2">女性</td>
         </tr>
-      </table>
-      <a href="index.html" style="text-align: center; display: block;">Back</a>
+        <tr class="bg-white">
+          <td class="px-4 py-2">田中次郎</td>
+          <td class="px-4 py-2">35歳</td>
+          <td class="px-4 py-2">男性</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="index.html" class="block mx-auto mt-8 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded">Back</a>
+  </div>
 </body>
 </html>

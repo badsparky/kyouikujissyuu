@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>フォントチェンジャー</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="changeFont('mincyou')">明朝体</button>
+  <button onclick="changeFont('gos')">ＭＳ Ｐゴシック-標準</button>
+  <button onclick="changeFont('hi')">筆書体</button>
+  <button onclick="changeFont('pop')">HG創英角ﾎﾟｯﾌﾟ体</button>
+  <button onclick="resetFont()">リセット</button>
+  <p>これは日本語のテキストです。</p>
+  <p>これはもっと日本語のテキストです。</p>
+  <script>
+    var originalFont = document.body.style.fontFamily;
+    
+    function changeFont(font) {
+      var newFont = '';
+      switch (font) {
+        case 'mincyou':
+          newFont = "Hiragino Mincho ProN";
+          break;
+        case 'gos':
+          newFont = 'ＭＳ Ｐゴシック';
+          break;
+        case 'hi':
+          newFont='HG行書体';
+          break;
+        case 'pop':
+          newFont = 'HGP創英角ﾎﾟｯﾌﾟ体';
+          break;
+        default:
+          newFont = originalFont;
+      }
+      document.body.style.fontFamily = newFont;
+    }
+    
+    function resetFont() {
+      document.body.style.fontFamily = originalFont;
+    }
+  </script>
+</body>
+</html>

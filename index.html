@@ -2,20 +2,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta lang="ja"/>
-<title>ClassPage</title>
+<title>ページ遷移</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+input[type="submit"] {
+  background-color: blue;
+  margin: 10px;
+}
+</style>
 </head>
 <body>
 
-<h2>ページ一覧</h2>
+<div class="container">
+  <h2>ページ遷移</h2>
 
-<form action="goodgraph.html">
-  <input type="submit" value="Go to Good Graph">
-</form> 
+  <form action="goodgraph.html">
+    <button type="submit" class="btn btn-primary">Go to Good Graph</button>
+  </form> 
 
-<form action="badgraph.html">
-  <input type="submit" value="Go to Bad Graph">
-</form> 
+  <form action="badgraph.html">
+    <button type="submit" class="btn btn-primary">Go to Bad Graph</button>
+  </form> 
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>

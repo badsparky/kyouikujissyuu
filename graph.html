@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Bar Graph Example</title>
@@ -39,37 +40,101 @@
         canvas {
             margin-top: 1rem;
         }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            margin: 1%;
+        }
+
+        .valueInput,
+        .labelInput {
+            margin-right: 10px;
+        }
+
+        label {
+            font-size: 1.2rem;
+            color: #555;
+            margin-right: 1rem;
+        }
+
+        input[type="text"] {
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            color: #555;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 0.5rem rgba(0, 123, 255, 0.5);
+        }
+
+        .chart-container {
+            width: 80%;
+            height: 30%;
+        }
+
+        button {
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #007bff;
+            box-shadow: 0 0 0.5rem rgba(0, 123, 255, 0.5);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0069d9;
+        }
+
+        button:active {
+            background-color: #005cbf;
+            box-shadow: none;
+        }
     </style>
 </head>
+
 <body>
     <div id="inputContainer">
-        <div class="input-container">
-            <input type="text" class="valueInput">
+        <div class="container">
             <label for="labelInput">Enter labels:</label>
-            <input type="text" class="labelInput">
+            <input type="text" id="labelInput" class="labelInput">
+            <label for="valueInput">Enter value:</label>
+            <input type="text" id="valueInput" class="valueInput">
         </div>
     </div>
     <button onclick="addInput()">Add Input</button>
     <button onclick="createGraph()">Create Graph</button>
-    <canvas id="myChart"></canvas>
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
     <script>
         let chart;
 
         function addInput() {
             const inputContainer = document.getElementById('inputContainer');
             const newInputContainer = document.createElement('div');
-            newInputContainer.classList.add('input-container');
-            const newLabel = document.createElement('label');
-            newLabel.textContent = 'Enter labels:';
+            newInputContainer.classList.add('container');
+            const newLabel1 = document.createElement('label');
+            newLabel1.textContent = 'Enter value:';
             const newLabelInput = document.createElement('input');
             newLabelInput.type = 'text';
             newLabelInput.classList.add('labelInput');
+            const newLabel2 = document.createElement('label');
+            newLabel2.textContent = 'Enter labels:';
             const newValueInput = document.createElement('input');
             newValueInput.type = 'text';
             newValueInput.classList.add('valueInput');
-            newInputContainer.appendChild(newValueInput);
-            newInputContainer.appendChild(newLabel);
+            newInputContainer.appendChild(newLabel2);
             newInputContainer.appendChild(newLabelInput);
+            newInputContainer.appendChild(newLabel1);
+            newInputContainer.appendChild(newValueInput);
             inputContainer.appendChild(newInputContainer);
         }
 
@@ -118,4 +183,5 @@
         }
     </script>
 </body>
+
 </html>

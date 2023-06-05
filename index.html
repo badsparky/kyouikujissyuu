@@ -10,6 +10,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #333;
+  margin-top: 3%;
 }
 
 input[type="submit"], button[type="submit"] {
@@ -45,6 +46,16 @@ input[type="submit"]:hover, button[type="submit"]:hover {
   background-color: #0056b3;
   border-color: #0056b3;
 }
+
+form {
+  display: inline-block;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+button {
+  margin: 0 10px;
+}
 </style>
 </head>
 <body>
@@ -54,16 +65,17 @@ input[type="submit"]:hover, button[type="submit"]:hover {
     <h2>PageList</h2>
   </div>
 
-  <form action="goodgraph.html">
-    <button type="submit" class="btn btn-primary">Good Graph</button>
-  </form> 
-
-  <form action="badgraph.html">
-    <button type="submit" class="btn btn-primary">Bad Graph</button>
-  </form>   
-  <form action="fontChanger.html">
-    <button type="submit" class="btn btn-primary">Font Changer</button>
-  </form> 
+  <div class="text-center">
+      <form action="badTable.html">
+        <button type="submit" class="btn btn-primary">Table</button>
+      </form>   
+      <form action="fontChanger.html">
+        <button type="submit" class="btn btn-primary">Font Changer</button>
+      </form>    
+      <form action="graph.html">
+        <button type="submit" class="btn btn-primary">Graph Maker</button>
+      </form> 
+  </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

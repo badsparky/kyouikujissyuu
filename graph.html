@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bar Graph Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+
+        .input-container label {
+            margin-bottom: 0.5rem;
+        }
+
+        .input-container input {
+            margin-bottom: 0.5rem;
+        }
+
+        .input-container button {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .input-container button:hover {
+            background-color: #0069d9;
+        }
+
+        canvas {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputContainer">
+        <div class="input-container">
+            <input type="text" class="valueInput">
+            <label for="labelInput">Enter labels:</label>
+            <input type="text" class="labelInput">
+        </div>
+    </div>
+    <button onclick="addInput()">Add Input</button>
+    <button onclick="createGraph()">Create Graph</button>
+    <canvas id="myChart"></canvas>
+    <script>
+        let chart;
+
+        function addInput() {
+            const inputContainer = document.getElementById('inputContainer');
+            const newInputContainer = document.createElement('div');
+            newInputContainer.classList.add('input-container');
+            const newLabel = document.createElement('label');
+            newLabel.textContent = 'Enter labels:';
+            const newLabelInput = document.createElement('input');
+            newLabelInput.type = 'text';
+            newLabelInput.classList.add('labelInput');
+            const newValueInput = document.createElement('input');
+            newValueInput.type = 'text';
+            newValueInput.classList.add('valueInput');
+            newInputContainer.appendChild(newValueInput);
+            newInputContainer.appendChild(newLabel);
+            newInputContainer.appendChild(newLabelInput);
+            inputContainer.appendChild(newInputContainer);
+        }
+
+        function createGraph() {
+            const labelInputs = document.getElementsByClassName('labelInput');
+            const valueInputs = document.getElementsByClassName('valueInput');
+            const labels = [];
+            const values = [];
+
+            for (let i = 0; i < labelInputs.length; i++) {
+                labels.push(labelInputs[i].value);
+            }
+
+            for (let i = 0; i < valueInputs.length; i++) {
+                values.push(Number(valueInputs[i].value));
+            }
+
+            if (chart) {
+                chart.data.labels = labels;
+                chart.data.datasets[0].data = values;
+                chart.update();
+            } else {
+                const ctx = document.getElementById('myChart').getContext('2d');
+                chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Data',
+                            data: values,
+                            backgroundColor: '#007bff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

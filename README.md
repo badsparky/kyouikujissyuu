@@ -16,15 +16,15 @@
 
 ### [Good Table](goodTable.html)
 
-**[Bad Table](badTable.html)**と比較することを目的としている。グラフを反転させることによる効果を実演している。
+[Bad Table](badTable.html)と比較することを目的としている。グラフを反転させることによる効果を実演している。
 
 ### [Font Changer](fontChanger.html)
 
-自由にフォントを変更することによって、フォント毎の違いに気づい貰うことを意図している。
+自由にフォントを変更することによって、フォント毎の違いに気づくことを意図している。
 
 ### [Font Checker](fontChecker.html)
 
-**[Font Changer](fontChanger.html)**のようにフォントを変更するだけではわかりにくいため、一覧で比較できるようにしたページである。
+[Font Changer](fontChanger.html)のようにフォントを変更するだけでは差異がわかりにくいため、一覧で比較できるようにしたページである。
 
 ### [Graph](graph.html)
 
